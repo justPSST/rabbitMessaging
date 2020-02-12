@@ -10,7 +10,7 @@ export class Broker implements IBroker {
    * @param prefetch
    * The maximum number of messages sent over the channel that can be awaiting acknowledgement
    */
-  private prefetch: number;
+  private prefetch: number | undefined;
 
   /**
    * @param requestPromise
@@ -18,7 +18,7 @@ export class Broker implements IBroker {
    */
   private requestPromise: IRequestPromise = {};
 
-  public callbackQueue: string;
+  public callbackQueue: string | undefined;
 
   private connection: Connection = new Connection('amqp://localhost');
 

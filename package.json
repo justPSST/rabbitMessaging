@@ -3,17 +3,20 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/amqplib": "^0.5.13",
     "amqp-ts": "^1.8.0",
+    "typescript": "^3.7.5",
     "uuid": "^3.4.0"
   },
   "devDependencies": {
     "@types/uuid": "^3.4.7"
   },
   "scripts": {
-    "prepublish": "tsc"
+    "build": "tsc"
   }
 }

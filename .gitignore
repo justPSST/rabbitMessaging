@@ -40,3 +40,4 @@ Thumbs.db
 package-lock.json
 /src/Web/wwwroot
 .eslintcache
+/lib
