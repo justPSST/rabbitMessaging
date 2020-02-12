@@ -3,7 +3,6 @@ import { IBroker } from './interfaces/broker';
 import { v4 } from 'uuid';
 import { IRequestPromise } from './interfaces/requestPromise';
 import { IActionResult } from './interfaces/actionResult';
-import { getConfig } from '../../configuration/utils';
 
 export class Broker implements IBroker {
   
@@ -21,9 +20,7 @@ export class Broker implements IBroker {
 
   public callbackQueue: string;
 
-  private configuration = getConfig();
-
-  private connection: Connection = new Connection(this.configuration.serviceMessaging.connectionString);
+  private connection: Connection = new Connection('amqp://localhost');
 
   public async initialize(prefetch: number = 100): Promise<void> {
     this.prefetch = prefetch;
