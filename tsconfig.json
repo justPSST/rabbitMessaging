@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "*": [
+        "types/*"
+      ]
+    },
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "pretty": true,
+    "sourceMap": true,
+    "target": "es6",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "alwaysStrict": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

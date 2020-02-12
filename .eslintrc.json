@@ -1,0 +1,144 @@
+{
+    "env": {
+        "browser": false,
+        "es6": true
+    },
+    "extends": "airbnb",
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "tsconfig.json",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "@typescript-eslint/tslint"
+    ],
+    "rules": {
+        "no-console": "off",
+        "class-methods-use-this": "off",
+        "no-unused-vars": "off",
+        "import/no-duplicates": "off",
+        "comma-dangle": ["error", "never"],
+        "arrow-body-style": "off",
+        "max-len": [
+          "warn",
+          160
+        ],
+        "no-param-reassign": "off",
+        "no-underscore-dangle": "off",
+        "linebreak-style": "off",
+        "import/no-unresolved": [
+            "off",
+            {
+                "commonjs": true,
+                "caseSensitive": true
+            }
+        ],
+        "import/prefer-default-export": [
+            "off"
+        ],
+        "@typescript-eslint/no-explicit-any": "error",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/class-name-casing": "error",
+        "@typescript-eslint/member-delimiter-style": [
+            "error",
+            {
+                "multiline": {
+                    "delimiter": "semi",
+                    "requireLast": true
+                },
+                "singleline": {
+                    "delimiter": "semi",
+                    "requireLast": false
+                }
+            }
+        ],
+        "@typescript-eslint/no-empty-function": "error",
+        "@typescript-eslint/no-use-before-define": "error",
+        "@typescript-eslint/quotes": [
+            "error",
+            "single"
+        ],
+        "@typescript-eslint/semi": [
+            "error",
+            "always"
+        ],
+        "import/extensions": "off",
+        "@typescript-eslint/type-annotation-spacing": "error",
+        "@typescript-eslint/tslint/config": [
+            "error",
+            {
+                "rules": {
+                    "ban": [
+                        true,
+                        [
+                            "_",
+                            "extend"
+                        ],
+                        [
+                            "_",
+                            "isNull"
+                        ],
+                        [
+                            "_",
+                            "isDefined"
+                        ]
+                    ],
+                    "jsdoc-format": true,
+                    "label-undefined": true,
+                    "no-duplicate-key": true,
+                    "no-trailing-comma": true,
+                    "no-unreachable": true,
+                    "no-unused-variable": false,
+                    "one-line": [
+                        true,
+                        "check-open-brace",
+                        "check-catch",
+                        "check-else",
+                        "check-whitespace"
+                    ],
+                    "typedef": [
+                        true,
+                        "call-signature"
+                    ],
+                    "use-strict": [
+                        true,
+                        "check-module",
+                        "check-function"
+                    ],
+                    "no-param-reassign": false
+                }
+            }
+        ]
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [
+                    ".js",
+                    ".jsx",
+                    ".json"
+                ]
+            }
+        },
+        "react": {
+            "pragma": "React",
+            "version": "detect"
+        },
+        "propWrapperFunctions": [
+            "forbidExtraProps",
+            "exact",
+            "Object.freeze"
+        ],
+        "import/extensions": [
+            ".js",
+            ".mjs",
+            ".jsx"
+        ],
+        "import/core-modules": [],
+        "import/ignore": [
+            "node_modules",
+            "\\.(coffee|scss|css|less|hbs|svg|json)$"
+        ]
+    }
+}
