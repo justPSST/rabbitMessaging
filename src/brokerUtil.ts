@@ -27,7 +27,7 @@ export const configureService = async (serviceName: string, callback: Function, 
   setTimeout(() => {
     const isConnected = broker.isConnected();
     console.log(isConnected ? 'Broker succesfully connected' : 'Broker connection failed. Check configuration');
-  }, 1000);
+  }, 5000);
 }
 
 export const sendRequest = async (code: number, body: any, queueName: string) => {
