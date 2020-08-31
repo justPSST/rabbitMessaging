@@ -2,9 +2,9 @@ import { Exchange, Message, Queue } from 'amqp-ts';
 
 export interface IBroker {
   callbackQueue: string | undefined;
-  initialize(prefetch?: number): Promise<void>;
+  initialize(): Promise<void>;
   subscribe(queueName: string, callback: Function, exchange: Exchange | undefined, ack: boolean): Promise<void>;
-  sendRequest(code: number, body: object, targetService: string): Promise<any>;
+  sendRequest<T>(code: number, body: object, targetService: string): Promise<T>;
   sendResponse(action: Function, body: object, message: Message, queueName: string): Promise<Message>;
   declareQueue(name: string, options?: Queue.DeclarationOptions): Queue;
   declareExchange(name: string, type: string, options?: Exchange.DeclarationOptions): Exchange;

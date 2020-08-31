@@ -3,6 +3,7 @@ import { IBroker } from './interfaces/broker';
 import { v4 } from 'uuid';
 import { IRequestPromise } from './interfaces/requestPromise';
 import { IActionResult } from './interfaces/actionResult';
+import { IBrokerConfig } from './interfaces/brokerConfig';
 
 export class Broker implements IBroker {
   
@@ -10,7 +11,7 @@ export class Broker implements IBroker {
    * @param prefetch
    * The maximum number of messages sent over the channel that can be awaiting acknowledgement
    */
-  private prefetch: number | undefined;
+  private prefetch: number;
 
   /**
    * @param requestPromise
@@ -20,10 +21,14 @@ export class Broker implements IBroker {
 
   public callbackQueue: string | undefined;
 
-  private connection: Connection = new Connection('amqp://localhost');
+  private connection: Connection;
 
-  public async initialize(prefetch: number = 100): Promise<void> {
-    this.prefetch = prefetch;
+  constructor(configuration: IBrokerConfig) {
+    this.connection = new Connection(configuration.host || 'amqp://localhost');
+    this.prefetch = configuration.prefetch || 100;
+  }
+
+  public async initialize(): Promise<void> {
     await this.connection.completeConfiguration();
   }
 

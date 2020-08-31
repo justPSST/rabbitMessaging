@@ -26,8 +26,10 @@ Example:
 If you want to call function from another service, you should use sendRequest method.
 It would search required function in specified service from handleMessage function by message code.
 
+prefetch: the maximum number of messages sent over the channel that can be awaiting acknowledgement.
+
   Example:
 ```js
-  const result = await sendRequest(MessageCodes.DO_SMTG, data, 'serviceName');
+  const result = await sendRequest(MessageCodes.DO_SMTG, data, 'serviceName', 'connectionString', 'prefetch');
 ```
 In case of service unavailable (in case of service restart or etc) requests would be stored in queue and executes when service would be available.
