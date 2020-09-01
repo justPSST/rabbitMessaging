@@ -3,7 +3,7 @@ import { v4 } from 'uuid';
 
 export const configureService = async (serviceName: string, callback: Function, connectionString?: string, prefetch?: number) => {
   BrokerUtil.initBroker({
-    host: connectionString || 'amqp://localhost',
+    host: connectionString || 'amqp://localhost:5672',
     prefetch: prefetch || 100
   });
   const broker = BrokerUtil.getBroker();
