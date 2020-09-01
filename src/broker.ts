@@ -24,7 +24,7 @@ export class Broker implements IBroker {
   private connection: Connection;
 
   constructor(configuration: IBrokerConfig) {
-    this.connection = new Connection(configuration.host || 'amqp://localhost');
+    this.connection = new Connection(configuration.host || 'amqp://localhost:5672');
     this.prefetch = configuration.prefetch || 100;
   }
 
